@@ -1,0 +1,4 @@
+<h1><%= @product.name %></h1>
+<p><%= number_to_currency(@product.price) %></p>
+<p><%= @product.description %></p>
+<%= link_to 'Add to cart', line_items_path(product_id,: @product.id), method: :post %>

@@ -1,0 +1,36 @@
+<h1>sign up</h1>
+  <%= form_with(model: @user , url: users_path) do |form} %>
+  <% if @user.erros.any? %>
+    <div id="error describing"
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user:</h2
+      <ul>
+        <% @user.erros.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+          <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%=  form.label :email %>
+    <%=  form.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div>
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Sign Up' %>
+  </div>
+<% end %>
+    
+
+
+  
